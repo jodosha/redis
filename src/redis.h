@@ -49,6 +49,7 @@
 #include <syslog.h>
 #include <netinet/in.h>
 #include <lua.h>
+#include <mruby.h>
 #include <signal.h>
 
 #include "ae.h"      /* Event driven programming library */
@@ -812,6 +813,8 @@ struct redisServer {
     int lua_timedout;     /* True if we reached the time limit for script
                              execution. */
     int lua_kill;         /* Kill the script if true. */
+    /* Scripting MRuby */
+    mrb_state *mrb; /* The MRuby interpreter */
     /* Assert & bug reporting */
     char *assert_failed;
     char *assert_file;
@@ -1263,6 +1266,7 @@ void sentinelIsRunning(void);
 
 /* Scripting */
 void scriptingInit(void);
+void mrScriptingInit(void);
 
 /* Blocked clients */
 void processUnblockedClients(void);

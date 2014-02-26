@@ -1731,6 +1731,7 @@ void initServer() {
     if (server.cluster_enabled) clusterInit();
     replicationScriptCacheInit();
     scriptingInit();
+    mrScriptingInit();
     slowlogInit();
     bioInit();
 }
