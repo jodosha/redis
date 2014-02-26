@@ -260,6 +260,7 @@ struct redisCommand redisCommandTable[] = {
     {"object",objectCommand,-2,"r",0,NULL,2,2,2,0,0},
     {"client",clientCommand,-2,"ar",0,NULL,0,0,0,0,0},
     {"eval",evalCommand,-3,"s",0,zunionInterGetKeys,0,0,0,0,0},
+    {"reval",mrEvalCommand,-3,"s",0,zunionInterGetKeys,0,0,0,0,0},
     {"evalsha",evalShaCommand,-3,"s",0,zunionInterGetKeys,0,0,0,0,0},
     {"slowlog",slowlogCommand,-2,"r",0,NULL,0,0,0,0,0},
     {"script",scriptCommand,-2,"ras",0,NULL,0,0,0,0,0},
