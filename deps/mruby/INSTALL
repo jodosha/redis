@@ -1,0 +1,34 @@
+* Prerequisites
+  
+  1. Make sure you have bison (http://www.gnu.org/software/bison/) installed in your system. 
+  2. Make sure you have ruby installed in your system (required to build).
+
+* Compilation and Installation
+
+  1. Run make in the top directory.
+
+     This command will create a build directory with a directory for the host environment
+     and one for each crossbuild environment based on the settings in the build_config.rb 
+     file.
+
+     Assuming a default build, each of the environment directories will have the following 
+     important directories:
+
+       * bin - The binary executables for this environment
+       * lib - The libraries for this environment
+
+     You can find the header files in the include directory at the root of the project.
+
+     You can directory invoke 'minirake' as the following.
+
+        $ ruby ./minirake
+
+If an error occurs when compiling mruby, it will be helpful for others if you
+send a detailed report to the developers that includes the error log, machine,
+and OS type.
+
+
+* Porting to other platforms
+
+
+That's all.
